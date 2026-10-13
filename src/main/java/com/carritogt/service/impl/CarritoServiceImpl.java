@@ -2,10 +2,10 @@ package com.carritogt.service.impl;
 
 import com.carritogt.dto.AgregarCarritoRequest;
 import com.carritogt.dto.ItemCarritoDTO;
+import com.carritogt.exception.ResourceNotFoundException;
 import com.carritogt.model.ItemCarrito;
 import com.carritogt.model.Producto;
 import com.carritogt.repository.CarritoRepository;
-import com.carritogt.exception.ResourceNotFoundException;
 import com.carritogt.repository.ProductoRepository;
 import com.carritogt.service.CarritoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,6 @@ public class CarritoServiceImpl implements CarritoService {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Producto con id " + request.getIdProducto() + " no existe"));
 
-
         carritoRepository.findByCodUsuarioAndProducto_IdProducto(codUsuario, request.getIdProducto())
                 .ifPresentOrElse(
                         itemExistente -> {
@@ -55,6 +54,15 @@ public class CarritoServiceImpl implements CarritoService {
                             carritoRepository.save(nuevo);
                         }
                 );
+    }
+    @Override
+    @Transactional
+    public void actualizarCantidad(Long idShoppingCart, int cantidad) {
+        ItemCarrito item = carritoRepository.findById(idShoppingCart)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Item de carrito con id " + idShoppingCart + " no existe"));
+        item.setCantidad(cantidad);
+        carritoRepository.save(item);
     }
 
     @Override

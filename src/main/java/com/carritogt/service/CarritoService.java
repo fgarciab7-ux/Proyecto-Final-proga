@@ -14,4 +14,7 @@ public interface CarritoService {
     void eliminarItem(Long idShoppingCart);
 
     void vaciarCarrito(String codUsuario);
+
+    void actualizarCantidad(Long idShoppingCart, int cantidad);
+
 }

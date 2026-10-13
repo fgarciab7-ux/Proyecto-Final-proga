@@ -1,4 +1,3 @@
-// URL base de la API REST (backend Spring Boot)
 const API_BASE = "http://localhost:8080/api";
 const MAX_POR_PRODUCTO = 10;
 

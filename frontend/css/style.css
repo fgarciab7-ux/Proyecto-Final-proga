@@ -110,3 +110,42 @@ th, td {
     font-size: 1.2rem;
     margin-top: 1rem;
 }
+.cantidad-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0.5rem 0 0.2rem;
+}
+
+.cantidad-control button {
+    margin: 0;
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.cantidad-control input.cantidad {
+    width: 3.2rem;
+    text-align: center;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.limite { color: #777; }
+
+.flash.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.cantidad-valor {
+    min-width: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cantidad-control button:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+}

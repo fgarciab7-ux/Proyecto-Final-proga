@@ -2,6 +2,7 @@ package com.carritogt.model;
 
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "shopping_cart")
 public class ItemCarrito {

@@ -22,7 +22,7 @@ public class ProductoController {
         this.productoService = productoService;
     }
 
-    //  lista todos los productos
+    //  lista todos los productos (catalogo de la tienda)
     @GetMapping
     public ResponseEntity<List<ProductoDTO>> listar() {
         return ResponseEntity.ok(productoService.obtenerTodos());

@@ -65,3 +65,4 @@ function mostrarMensaje(texto, tipo = "exito") {
     div.style.display = "block";
     setTimeout(() => { div.style.display = "none"; }, 2500);
 }
+
